@@ -7,12 +7,24 @@
 //
 
 #include <iostream>
+#include "thirdParty.h"
+
+int clientFunction(ADC_Paramers* data)
+{
+    cout << "client data: " << data->iPersonCounter << endl;
+    return 0;
+}
 
 int main(int argc, const char * argv[])
 {
-
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    ADC_Paramers data;
+    clientFunction(&data);
+    register_fun_call(&clientFunction);
+    
+    while (true) {
+        usleep(1000);
+    }
+    
     return 0;
 }
 

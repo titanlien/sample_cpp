@@ -9,10 +9,9 @@
 #include <iostream>
 #include "thirdParty.h"
 
-int clientFunction(ADC_Paramers* data)
+ADC_Paramers* clientFunction(ADC_Paramers* data)
 {
-    cout << "client data: " << data->iPersonCounter << endl;
-    return 0;
+    return data;
 }
 
 int main(int argc, const char * argv[])
@@ -22,6 +21,7 @@ int main(int argc, const char * argv[])
     register_fun_call(&clientFunction);
     
     while (true) {
+        cout << "client data: " << data->iPersonCounter << endl;
         usleep(1000);
     }
     

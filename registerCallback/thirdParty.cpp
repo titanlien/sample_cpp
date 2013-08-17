@@ -8,19 +8,13 @@
 
 #include "thirdParty.h"
 
-ADC_Paramers mpdata;
+FUNC_HANDLER call_function;
 
 void
 setADC_Paramers(int iPersonCounter)
 {
-    mpdata.iPersonCounter = iPersonCounter;
-}
-
-int
-call_function(ADC_Paramers* pdata)
-{
-    int error_code = 0;
-    return error_code;
+    ADC_Paramers* data = call_function;
+    data->iPersonCounter = iPersonCounter;
 }
 
 void
@@ -39,7 +33,7 @@ bool
 register_fun_call(FUNC_HANDLER handler)
 {
     assert(handler != NULL);
-    handler = &call_function;
-    thread t1(loopadd);
+    call_function = handler;
+    thread thr1(loopadd);
     return true;
 }

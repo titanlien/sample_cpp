@@ -19,7 +19,7 @@ typedef struct ADC_Paramers {
     int iPersonCounter;
 }ADC_Paramers;
 
-typedef int (*FUNC_HANDLER)(ADC_Paramers*);
+typedef ADC_Paramers* (*FUNC_HANDLER)(ADC_Paramers*);
 
 using namespace std;
 bool register_fun_call(FUNC_HANDLER );

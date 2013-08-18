@@ -10,11 +10,11 @@
 
 FUNC_HANDLER call_function;
 
-void
-setADC_Paramers(int iPersonCounter)
+ADC_Paramers genADC_Parameter(int iPersonCounter)
 {
-    ADC_Paramers* data = call_function;
-    data->iPersonCounter = iPersonCounter;
+    ADC_Paramers temp;
+    temp.iPersonCounter = iPersonCounter;
+    return temp;
 }
 
 void
@@ -22,10 +22,11 @@ loopadd()
 {
     static int iPersonCounter = 0;
     while (true) {
-        setADC_Paramers(iPersonCounter);
-        cout << "3rd data: " << iPersonCounter << endl;
-        ++iPersonCounter;
-        usleep(1000);
+        ADC_Paramers data = genADC_Parameter(iPersonCounter);
+        (*call_function)(data);
+        cout << "3rd data: " << data.iPersonCounter << endl;
+        iPersonCounter++;
+        sleep(1);
     }
 }
 

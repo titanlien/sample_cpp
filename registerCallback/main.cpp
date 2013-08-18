@@ -9,7 +9,7 @@
 #include <iostream>
 #include "thirdParty.h"
 
-ADC_Paramers* clientFunction(ADC_Paramers* data)
+ADC_Paramers clientFunction(ADC_Paramers data)
 {
     return data;
 }
@@ -17,12 +17,12 @@ ADC_Paramers* clientFunction(ADC_Paramers* data)
 int main(int argc, const char * argv[])
 {
     ADC_Paramers data;
-    clientFunction(&data);
+    clientFunction(data);
     register_fun_call(&clientFunction);
     
     while (true) {
-        cout << "client data: " << data->iPersonCounter << endl;
-        usleep(1000);
+        cout << "client data: " << data.iPersonCounter << endl;
+        sleep(1);
     }
     
     return 0;

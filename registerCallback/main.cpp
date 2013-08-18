@@ -11,6 +11,7 @@
 
 ADC_Paramers clientFunction(ADC_Paramers data)
 {
+    cout << "client data: " << data.iPersonCounter << endl;
     return data;
 }
 
@@ -21,7 +22,6 @@ int main(int argc, const char * argv[])
     register_fun_call(&clientFunction);
     
     while (true) {
-        cout << "client data: " << data.iPersonCounter << endl;
         sleep(1);
     }
     

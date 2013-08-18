@@ -36,5 +36,6 @@ register_fun_call(FUNC_HANDLER handler)
     assert(handler != NULL);
     call_function = handler;
     thread thr1(loopadd);
+    thr1.join();
     return true;
 }

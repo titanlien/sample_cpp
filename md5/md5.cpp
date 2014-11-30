@@ -3,14 +3,21 @@
  * 1. qmake -project -spec macx-g++
  * 2. qmake
  * 3. make
+ *
+ * clean:
+ * make distclean
  */
 
 #include <QDebug>
 #include <QFile>
 #include <QCryptographicHash>
 
-int main(){
-  QFile file("md5.cpp");
+int main(int argc, char* argv[]){
+  QFile file;
+  if (argc == 2)
+    file.setFileName(argv[1]);
+  else
+    file.setFileName("./md5.cpp");
   
   if (file.open(QIODevice::ReadOnly))
   {

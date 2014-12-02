@@ -6,6 +6,8 @@
 	is base on your input to choose add or del function between number 3 and 4
 #### 3. fun_ptr_wiki.c 
 	is a wiki sample do the same thing with function_pointer.cpp
+#### 4. md5
+	is simple code implement Qt library
 
 ---
 ## XCODE PROJECT

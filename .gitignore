@@ -12,3 +12,6 @@
 *.la
 *.a
 .qmake.stash
+
+# autogen by qmake
+*.pro
